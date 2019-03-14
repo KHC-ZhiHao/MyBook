@@ -224,7 +224,7 @@ gene.template('use deep clone', (base, skill, next, exit, fail) => {
 
 ## Scan
 
-`scan`會接收一串的function，當宣告`scan()`後會把所有註冊的function執行一便並賦予宣告的參數。
+`scan`會接收一串的function，當宣告`scan()`後會把所有註冊的function執行一次並賦予宣告的參數。
 
 ```js
 gene.template('use deep clone', (base, skill, next, exit, fail) => {

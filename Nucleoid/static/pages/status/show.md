@@ -57,11 +57,7 @@ gene.transcription().then((messenger) => {
 
 ## json
 
-<<<<<<< HEAD
 `json()`是取得`get`之後轉換成`json`字串，但與直接`stringify`不同的是，該function會檢查是否有迴圈結構。
-=======
-`json()`是取得`get`之後轉換成`json`字串，但與直接`stringify`不同的是，該函示會檢查是否有迴圈結構。
->>>>>>> c222bffa5713779d72b54587b6a131510c97147e
 
 ```js
 var gene = Nucleoid.createGene('look json')
