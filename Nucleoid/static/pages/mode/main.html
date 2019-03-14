@@ -1,0 +1,419 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>監聽模式 · Nucleoid</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../style/main.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../operon/main.html" />
+    
+    
+    <link rel="prev" href="../skill/main.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" >
+            
+                <span>
+            
+                    
+                    Nucleoid
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    介紹
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../gene/main.html">
+            
+                <a href="../gene/main.html">
+            
+                    
+                    基因
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../gene/pool.html">
+            
+                <a href="../gene/pool.html">
+            
+                    
+                    建立基因庫
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../status/main.html">
+            
+                <a href="../status/main.html">
+            
+                    
+                    狀態
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../status/show.html">
+            
+                <a href="../status/show.html">
+            
+                    
+                    輸出模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../flow/main.html">
+            
+                <a href="../flow/main.html">
+            
+                    
+                    流程控制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../flow/base.html">
+            
+                <a href="../flow/base.html">
+            
+                    
+                    base
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../flow/template.html">
+            
+                <a href="../flow/template.html">
+            
+                    
+                    基因模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../skill/main.html">
+            
+                <a href="../skill/main.html">
+            
+                    
+                    使用技能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6" data-path="main.html">
+            
+                <a href="main.html">
+            
+                    
+                    監聽模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../operon/main.html">
+            
+                <a href="../operon/main.html">
+            
+                    
+                    操控子Operon
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >監聽模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="mode">Mode</h1>
+<p><strong>&#x76E3;&#x8996;&#x6BCF;&#x4E00;&#x6B65;</strong></p>
+<p><code>Nucleoid</code>&#x63D0;&#x4F9B;&#x4E86;&#x5E7E;&#x7A2E;&#x76E3;&#x807D;&#x6A21;&#x5F0F;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x8B93;&#x6E2C;&#x8A66;&#x74B0;&#x5883;&#x80FD;&#x5E36;&#x4F86;&#x66F4;&#x826F;&#x597D;&#x7684;&#x56DE;&#x994B;&#x3002;</p>
+<blockquote>
+<p>&#x76E3;&#x807D;&#x6A21;&#x5F0F;&#x975E;&#x5E38;&#x6D88;&#x8017;&#x6548;&#x80FD;&#xFF0C;&#x8ACB;&#x8B39;&#x614E;&#x4F7F;&#x7528;&#x65BC;&#x6B63;&#x5F0F;&#x74B0;&#x5883;&#x4E0A;&#x3002;</p>
+</blockquote>
+<hr>
+<h2 id="catch-exception-mode">Catch Exception Mode</h2>
+<p>&#x555F;&#x7528;&#x8A72;&#x6A21;&#x5F0F;&#x6703;&#x4F7F;&#x6240;&#x6709;&#x7684;template&#x90FD;&#x7528;try-catch&#x7684;&#x6A21;&#x5F0F;&#x9032;&#x884C;&#xFF0C;&#x6293;&#x5230;&#x932F;&#x8AA4;&#x6703;&#x52A0;&#x5165;&#x4E00;&#x7B46;&#x8A0A;&#x606F;&#x81F3;status&#x4E26;&#x57F7;&#x884C;&#x3002;</p>
+<blockquote>
+<p>&#x8A72;&#x6A21;&#x5F0F;&#x5FC5;&#x5F97;&#x5BA3;&#x544A;exit or fail&#xFF0C;&#x5426;&#x5247;&#x7A0B;&#x5E8F;&#x4E0D;&#x6703;&#x7D50;&#x675F;</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> enable = process.env.dev <span class="hljs-comment">// true</span>
+gene.setCatchExceptionMode(enable, (base, exception, exit, fail) =&gt; {
+    base.error = exception.message
+    fail()
+})
+
+gene.template(<span class="hljs-string">&apos;test try-catch-mode&apos;</span>, (base, skill, next, exit, fail) =&gt; {
+    <span class="hljs-keyword">let</span> a = <span class="hljs-number">5</span>
+    a()
+    next()
+})
+
+gene.transctiption().catch((messenger) =&gt; {
+    cosnole.log(messenger.base.error) <span class="hljs-comment">// a not a function</span>
+})
+</code></pre>
+<hr>
+<h2 id="catch-uncaught-exception-mode">Catch Uncaught Exception Mode</h2>
+<p>&#x975E;&#x540C;&#x6B65;&#x9032;&#x884C;&#x7684;&#x7A0B;&#x5F0F;&#x4E0D;&#x6703;&#x88AB;try-catch&#x7D66;&#x6355;&#x6349;&#x5230;&#xFF0C;&#x5FC5;&#x9808;&#x5BA3;&#x544A;&#x8A72;&#x51FD;&#x6578;&#x624D;&#x6709;&#x8FA6;&#x6CD5;&#x66F4;&#x5168;&#x9762;&#x7684;&#x76E3;&#x807D;&#x3002;</p>
+<blockquote>
+<p>&#x8A72;&#x6A21;&#x5F0F;&#x5FC5;&#x5F97;&#x5BA3;&#x544A;exit or fail&#xFF0C;&#x5426;&#x5247;&#x7A0B;&#x5E8F;&#x4E0D;&#x6703;&#x7D50;&#x675F;</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> enable = process.env.dev <span class="hljs-comment">// true</span>
+gene.setCatchUncaughtExceptionMode(enable, (base, exception, exit, fail) =&gt; {
+    base.error = exception.message
+    fail()
+})
+
+gene.template(<span class="hljs-string">&apos;test uncaught-catch-mode&apos;</span>, (base, skill, next, exit, fail) =&gt; {
+    <span class="hljs-keyword">let</span> a = <span class="hljs-number">5</span>
+    setTimeout(() =&gt; {
+        a()
+        next()
+    }, <span class="hljs-number">500</span>)
+})
+
+gene.transctiption().catch((messenger) =&gt; {
+    cosnole.log(messenger.base.error) <span class="hljs-comment">// a not a function</span>
+})
+</code></pre>
+<hr>
+<h2 id="&#x9E7C;&#x57FA;&#x8FFD;&#x8E64;">&#x9E7C;&#x57FA;&#x8FFD;&#x8E64;</h2>
+<p><code>TraceBase</code>&#x6703;&#x5728;&#x6BCF;&#x6B21;&#x904B;&#x884C;&#x5B8C;<code>template</code>&#x6642;&#x5BA3;&#x544A;&#x4E00;&#x6B21;&#xFF0C;&#x4E26;&#x628A;&#x8907;&#x88FD;&#x7684;<code>base</code>&#x548C;&#x7576;&#x4E0B;<code>template</code>&#x7684;<code>status</code>&#x5E36;&#x5230;&#x53C3;&#x6578;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> enable = process.env.dev <span class="hljs-comment">// true</span>
+gene.setTraceBaseMode(enable, (cloneBase, status) =&gt; {
+    status.addAttr(<span class="hljs-string">&apos;trace base&apos;</span>, cloneBase)
+})
+</code></pre>
+<hr>
+<h2 id="&#x903E;&#x6642;&#x8655;&#x7406;">&#x903E;&#x6642;&#x8655;&#x7406;</h2>
+<p>&#x907F;&#x514D;&#x8A2D;&#x5B9A;&#x932F;&#x8AA4;<code>template</code>&#x6C92;&#x6709;&#x8FA6;&#x6CD5;&#x5F80;&#x4E0B;&#x9032;&#x884C;&#xFF0C;<code>timeout</code>&#x53EF;&#x4EE5;&#x5F37;&#x5236;&#x8DF3;&#x812B;&#x6574;&#x500B;&#x6D41;&#x7A0B;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> ms = <span class="hljs-number">20000</span>
+<span class="hljs-keyword">let</span> enable = process.env.dev <span class="hljs-comment">// true</span>
+gene.setTimeoutMode(enable, ms, (base, exit, fail) =&gt; {
+    fail(<span class="hljs-string">&apos;Timeout&apos;</span>)
+})
+</code></pre>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../skill/main.html" class="navigation navigation-prev " aria-label="Previous page: 使用技能">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../operon/main.html" class="navigation navigation-next " aria-label="Next page: 操控子Operon">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"監聽模式","level":"2.6","depth":1,"next":{"title":"操控子Operon","level":"2.7","depth":1,"path":"pages/operon/main.md","ref":"./pages/operon/main.md","articles":[]},"previous":{"title":"使用技能","level":"2.5","depth":1,"path":"pages/skill/main.md","ref":"./pages/skill/main.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nucleoid","links":{"sidebar":false},"gitbook":"*","extension":null},"file":{"path":"pages/mode/main.md","mtime":"2019-03-13T02:13:33.642Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-14T09:53:16.712Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
