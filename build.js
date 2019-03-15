@@ -1,5 +1,6 @@
 let dir = [
-    'Nucleoid'
+    'Nucleoid',
+    'Packhouse'
 ]
 
 for (let file of dir) {

@@ -8,6 +8,6 @@
 * [流程控制](./pages/flow/main.md)
     * [base](./pages/flow/base.md)
 	* [基因模板](./pages/flow/template.md)
-* [使用技能](./pages/skill/main.md)
+* [使用Enzyme](./pages/enzyme/main.md)
 * [監聽模式](./pages/mode/main.md)
 * [操控子Operon](./pages/operon/main.md)
