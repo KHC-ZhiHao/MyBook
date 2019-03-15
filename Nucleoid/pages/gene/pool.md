@@ -45,7 +45,7 @@ module.exports = Nucleoid.createGene('event', {
 
     initiation: {
         enable: true,
-        action: (base, skill, next, exit, fail) => {
+        action: (base, enzy, next, exit, fail) => {
             base.finish = false
         }
     },
@@ -82,7 +82,7 @@ module.exports = Nucleoid.createGene('request', {
 
     initiation: {
         enable: true,
-        action: (base, skill, next, exit, fail) => {
+        action: (base, enzy, next, exit, fail) => {
             base.body = ''
             base.status = null
         }
@@ -128,7 +128,7 @@ let pool = require('./pool')
 exports.handler = async(event, context, callback) => {
     var gene = pool('2 + 2', 'request')
     
-    gene.template('2 + 2', (base, skill, next) => {
+    gene.template('2 + 2', (base, enzy, next) => {
         base.body = 4
         base.status = 200
         next()

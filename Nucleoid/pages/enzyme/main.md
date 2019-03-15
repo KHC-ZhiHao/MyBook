@@ -2,7 +2,7 @@
 
 **更直覺的API**
 
-`enzyme`是一個微型函式庫，綁定在所有的template內，有些skill的行為甚至會被加進status內以便追蹤。
+`enzyme`是一個微型函式庫，綁定在所有的template內，有些enzyme的行為甚至會被加進status內以便追蹤。
 
 ---
 

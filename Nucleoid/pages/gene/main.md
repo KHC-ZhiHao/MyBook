@@ -71,7 +71,7 @@ var gene = Nucleoid.createGene('my first gene', {
     initiation: {
         enable: true,
         protect: true,
-        action: (base, skill, next, exit, fail) => {
+        action: (base, enzy, next, exit, fail) => {
             // 初始化行為
         }
     },
@@ -101,7 +101,7 @@ var gene = Nucleoid.createGene('my first gene', {
     },
 
     templates: {
-        'first template': (base, skill, next, exit, fail) => {
+        'first template': (base, enzy, next, exit, fail) => {
             // 定義模板
         }
     }
@@ -119,12 +119,12 @@ var gene = Nucleoid.createGene('my first gene', {
 exports.handler = async(event, context, callback) => {
     var gene = Nucleoid.createGene('my first gene')
 
-    gene.template('create hello template', (base, skill, next) => {
+    gene.template('create hello template', (base, enzy, next) => {
         base.result = 'hello '
         next()
     })
 
-    gene.template('create world template', (base, skill, next) => {
+    gene.template('create world template', (base, enzy, next) => {
         base.result += 'world.'
         next()
     })

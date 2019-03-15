@@ -215,12 +215,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="../skill/main.html">
+        <li class="chapter " data-level="2.5" data-path="../enzyme/main.html">
             
-                <a href="../skill/main.html">
+                <a href="../enzyme/main.html">
             
                     
-                    使用技能
+                    Enzyme
             
                 </a>
             
@@ -353,7 +353,7 @@
     initiation: {
         enable: <span class="hljs-literal">true</span>,
         protect: <span class="hljs-literal">true</span>,
-        action: (base, skill, next, exit, fail) =&gt; {
+        action: (base, enzy, next, exit, fail) =&gt; {
             <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x884C;&#x70BA;</span>
         }
     },
@@ -383,7 +383,7 @@
     },
 
     templates: {
-        <span class="hljs-string">&apos;first template&apos;</span>: (base, skill, next, exit, fail) =&gt; {
+        <span class="hljs-string">&apos;first template&apos;</span>: (base, enzy, next, exit, fail) =&gt; {
             <span class="hljs-comment">// &#x5B9A;&#x7FA9;&#x6A21;&#x677F;</span>
         }
     }
@@ -396,12 +396,12 @@
 <pre><code class="lang-js">exports.handler = <span class="hljs-keyword">async</span>(event, context, callback) =&gt; {
     <span class="hljs-keyword">var</span> gene = Nucleoid.createGene(<span class="hljs-string">&apos;my first gene&apos;</span>)
 
-    gene.template(<span class="hljs-string">&apos;create hello template&apos;</span>, (base, skill, next) =&gt; {
+    gene.template(<span class="hljs-string">&apos;create hello template&apos;</span>, (base, enzy, next) =&gt; {
         base.result = <span class="hljs-string">&apos;hello &apos;</span>
         next()
     })
 
-    gene.template(<span class="hljs-string">&apos;create world template&apos;</span>, (base, skill, next) =&gt; {
+    gene.template(<span class="hljs-string">&apos;create world template&apos;</span>, (base, enzy, next) =&gt; {
         base.result += <span class="hljs-string">&apos;world.&apos;</span>
         next()
     })
@@ -439,7 +439,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基因","level":"2.2","depth":1,"next":{"title":"建立基因庫","level":"2.2.1","depth":2,"path":"pages/gene/pool.md","ref":"./pages/gene/pool.md","articles":[]},"previous":{"title":"介紹","level":"2.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nucleoid","links":{"sidebar":false},"gitbook":"*","extension":null},"file":{"path":"pages/gene/main.md","mtime":"2019-03-14T10:11:53.751Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-14T11:41:32.237Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基因","level":"2.2","depth":1,"next":{"title":"建立基因庫","level":"2.2.1","depth":2,"path":"pages/gene/pool.md","ref":"./pages/gene/pool.md","articles":[]},"previous":{"title":"介紹","level":"2.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nucleoid","links":{"sidebar":false},"gitbook":"*","extension":null},"file":{"path":"pages/gene/main.md","mtime":"2019-03-15T05:49:10.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-15T06:00:13.726Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

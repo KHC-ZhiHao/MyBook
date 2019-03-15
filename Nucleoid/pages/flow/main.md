@@ -19,7 +19,7 @@
 `initiation`開始前會執行的函數，性質跟`template`是相等的，必須宣告`next`才會繼續執行。
 
 ```js
-gene.setInitiation((base, skill, next, exit, fail) => {
+gene.setInitiation((base, enzy, next, exit, fail) => {
     // do something...
     next()
 })

@@ -21,7 +21,7 @@ gene.setCatchExceptionMode(enable, (base, exception, exit, fail) => {
     fail()
 })
 
-gene.template('test try-catch-mode', (base, skill, next, exit, fail) => {
+gene.template('test try-catch-mode', (base, enzy, next, exit, fail) => {
     let a = 5
     a()
     next()
@@ -47,7 +47,7 @@ gene.setCatchUncaughtExceptionMode(enable, (base, exception, exit, fail) => {
     fail()
 })
 
-gene.template('test uncaught-catch-mode', (base, skill, next, exit, fail) => {
+gene.template('test uncaught-catch-mode', (base, enzy, next, exit, fail) => {
     let a = 5
     setTimeout(() => {
         a()

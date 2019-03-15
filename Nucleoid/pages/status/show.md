@@ -13,8 +13,8 @@
 ```js
 var gene = Nucleoid.createGene('look status')
 
-gene.template('add status', (base, skill, next) => {
-    skill.setStatusAttr('show', 'hello.')
+gene.template('add status', (base, enzy, next) => {
+    enzy.setStatusAttr('show', 'hello.')
     next()
 })
 
@@ -62,10 +62,10 @@ gene.transcription().then((messenger) => {
 ```js
 var gene = Nucleoid.createGene('look json')
 
-gene.template('add status', (base, skill, next) => {
+gene.template('add status', (base, enzy, next) => {
     let loop = {}
     loop.target = loop
-    skill.setStatusAttr('show', loop)
+    enzy.setStatusAttr('show', loop)
     next()
 })
 
@@ -115,10 +115,10 @@ gene.transcription().then((messenger) => {
 ```js
 var gene = Nucleoid.createGene('look html')
 
-gene.template('add status', (base, skill, next) => {
+gene.template('add status', (base, enzy, next) => {
     let loop = {}
     loop.target = loop
-    skill.setStatusAttr('show', loop)
+    enzy.setStatusAttr('show', loop)
     next()
 })
 
@@ -163,11 +163,11 @@ gene.transcription().then((messenger) => {
 ```js
 var gene = Nucleoid.createGene('look error')
 
-gene.template('success', (base, skill, next, exit, fail) => {
+gene.template('success', (base, enzy, next, exit, fail) => {
     next()
 })
 
-gene.template('fail', (base, skill, next, exit, fail) => {
+gene.template('fail', (base, enzy, next, exit, fail) => {
     // 宣告fail會擲出錯誤狀態
     fail('fail test')
     // 在try-catch-mode底下這樣也會擲出錯誤狀態
@@ -216,11 +216,11 @@ gene.transcription().catch((messenger) => {
 // 該函數可以得到平面化的錯誤資料
 var gene = Nucleoid.createGene('look error')
 
-gene.template('success', (base, skill, next, exit, fail) => {
+gene.template('success', (base, enzy, next, exit, fail) => {
     next()
 })
 
-gene.template('fail', (base, skill, next, exit, fail) => {
+gene.template('fail', (base, enzy, next, exit, fail) => {
     fail('fail test')
 })
 

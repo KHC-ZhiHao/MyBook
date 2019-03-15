@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>使用技能 · Nucleoid</title>
+        <title>Enzyme · Nucleoid</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -220,7 +220,7 @@
                 <a href="main.html">
             
                     
-                    使用技能
+                    Enzyme
             
                 </a>
             
@@ -284,7 +284,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >使用技能</a>
+        <a href="../.." >Enzyme</a>
     </h1>
 </div>
 
@@ -296,47 +296,50 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="skill">Skill</h1>
+                                <h1 id="enzyme">Enzyme</h1>
 <p><strong>&#x66F4;&#x76F4;&#x89BA;&#x7684;API</strong></p>
-<p><code>skill</code>&#x662F;&#x4E00;&#x500B;&#x5FAE;&#x578B;&#x51FD;&#x5F0F;&#x5EAB;&#xFF0C;&#x7D81;&#x5B9A;&#x5728;&#x6240;&#x6709;&#x7684;template&#x5167;&#xFF0C;&#x6709;&#x4E9B;skill&#x7684;&#x884C;&#x70BA;&#x751A;&#x81F3;&#x6703;&#x88AB;&#x52A0;&#x9032;status&#x5167;&#x4EE5;&#x4FBF;&#x8FFD;&#x8E64;&#x3002;</p>
+<p><code>enzyme</code>&#x662F;&#x4E00;&#x500B;&#x5FAE;&#x578B;&#x51FD;&#x5F0F;&#x5EAB;&#xFF0C;&#x7D81;&#x5B9A;&#x5728;&#x6240;&#x6709;&#x7684;template&#x5167;&#xFF0C;&#x6709;&#x4E9B;enzyme&#x7684;&#x884C;&#x70BA;&#x751A;&#x81F3;&#x6703;&#x88AB;&#x52A0;&#x9032;status&#x5167;&#x4EE5;&#x4FBF;&#x8FFD;&#x8E64;&#x3002;</p>
 <hr>
 <h2 id="fragment">Fragment</h2>
-<p><code>fragment</code>&#x662F;&#x4E00;&#x500B;&#x975E;&#x540C;&#x6B65;&#x767C;&#x9001;&#x7684;&#x6574;&#x5408;<code>skill</code>&#xFF0C;&#x6240;&#x6709;&#x7684;<code>frag</code>&#x90FD;&#x6709;&#x7368;&#x7ACB;&#x7684;<code>status</code>&#x4E26;&#x52A0;&#x5165;&#x8FFD;&#x8E64;&#x3002;</p>
+<p><code>fragment</code>&#x662F;&#x4E00;&#x500B;&#x975E;&#x540C;&#x6B65;&#x767C;&#x9001;&#x7684;&#x6574;&#x5408;<code>enzyme</code>&#xFF0C;&#x6240;&#x6709;&#x7684;<code>frag</code>&#x90FD;&#x6709;&#x7368;&#x7ACB;&#x7684;<code>status</code>&#x4E26;&#x52A0;&#x5165;&#x8FFD;&#x8E64;&#x3002;</p>
+<blockquote>
+<p>add, setError, eachAdd&#x6703;&#x56DE;&#x50B3;frag&#x672C;&#x8EAB;&#x3002;</p>
+</blockquote>
 <h3 id="&#x53EF;&#x7531;&#x9019;&#x5169;&#x7A2E;&#x65B9;&#x5F0F;&#x5EFA;&#x7ACB;">&#x53EF;&#x7531;&#x9019;&#x5169;&#x7A2E;&#x65B9;&#x5F0F;&#x5EFA;&#x7ACB;</h3>
-<pre><code class="lang-js">skill.frag(fragName)
-skill.createFragment(fragName)
+<pre><code class="lang-js">enzy.frag(fragName)
+enzy.createFragment(fragName)
 </code></pre>
-<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;demo frag&apos;</span>, (base, skill, next, exit, fail) =&gt; {
+<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;demo frag&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
     base.count = <span class="hljs-number">0</span>
-    <span class="hljs-keyword">let</span> frag = skill.frag(<span class="hljs-string">&apos;my first fragment&apos;</span>)
     <span class="hljs-comment">// &#x4F7F;&#x7528;add&#x8A3B;&#x518A;&#x4E00;&#x500B;&#x7247;&#x6BB5;</span>
-    frag.add({
-        name: <span class="hljs-string">&apos;add1&apos;</span>,
-        action(error, onload) {
-            base.count += <span class="hljs-number">1</span>
-            onload()
-        }
-    })
-    frag.add({
-        name: <span class="hljs-string">&apos;add2&apos;</span>,
-        action(error, onload) {
-            base.count += <span class="hljs-number">1</span>
-            <span class="hljs-keyword">if</span> (base.count &gt; <span class="hljs-number">2</span>) {
-                error(<span class="hljs-string">&apos;impossible&apos;</span>)
-            } <span class="hljs-keyword">else</span> {
+    enzy.frag(<span class="hljs-string">&apos;my first fragment&apos;</span>)
+        .add({
+            name: <span class="hljs-string">&apos;add1&apos;</span>,
+            action(error, onload) {
+                base.count += <span class="hljs-number">1</span>
                 onload()
             }
-        }
-    })
-    <span class="hljs-comment">// &#x57F7;&#x884C;&#x6240;&#x6709;&#x7247;&#x6BB5;&#x57F7;&#x884C;onload&#x6642;&#x547C;&#x53EB;callback&#xFF0C;&#x6216;&#x6709;&#x4EFB;&#x4F55;&#x4E00;&#x500B;&#x7247;&#x6BB5;&#x547C;&#x53EB;error&#x4E5F;&#x6703;&#x57F7;&#x884C;callbakc&#xFF0C;&#x4E26;&#x628A;&#x7B2C;&#x4E00;&#x500B;&#x53C3;&#x6578;&#x5E36;&#x5165;error&#x50B3;&#x51FA;&#x7684;message</span>
-    frag.activate((err) =&gt; {
-        <span class="hljs-keyword">if</span> (err) {
-            <span class="hljs-built_in">console</span>.error(err)
-        } <span class="hljs-keyword">else</span> {
-            <span class="hljs-built_in">console</span>.log(base.count) <span class="hljs-comment">// 2</span>
-            next()
-        }
-    })
+        })
+        .add({
+            name: <span class="hljs-string">&apos;add2&apos;</span>,
+            action(error, onload) {
+                base.count += <span class="hljs-number">1</span>
+                <span class="hljs-keyword">if</span> (base.count &gt; <span class="hljs-number">2</span>) {
+                    error(<span class="hljs-string">&apos;impossible&apos;</span>)
+                } <span class="hljs-keyword">else</span> {
+                    onload()
+                }
+            }
+        })
+        .activate((err) =&gt; {
+            <span class="hljs-comment">// &#x57F7;&#x884C;&#x6240;&#x6709;&#x7247;&#x6BB5;&#x57F7;&#x884C;onload&#x6642;&#x547C;&#x53EB;callback&#xFF0C;&#x6216;&#x6709;&#x4EFB;&#x4F55;&#x4E00;&#x500B;&#x7247;&#x6BB5;&#x547C;&#x53EB;error&#x4E5F;&#x6703;&#x57F7;&#x884C;callbakc&#xFF0C;&#x4E26;&#x628A;&#x7B2C;&#x4E00;&#x500B;&#x53C3;&#x6578;&#x5E36;&#x5165;error&#x50B3;&#x51FA;&#x7684;message</span>
+            <span class="hljs-keyword">if</span> (err) {
+                <span class="hljs-built_in">console</span>.error(err)
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-built_in">console</span>.log(base.count) <span class="hljs-comment">// 2</span>
+                next()
+            }
+        })
 })
 </code></pre>
 <h3 id="seterror">SetError</h3>
@@ -347,21 +350,19 @@ skill.createFragment(fragName)
 </code></pre>
 <h3 id="eachadd">EachAdd</h3>
 <p>&#x53EF;&#x4EE5;&#x91DD;&#x5C0D;&#x4E00;&#x500B;&#x7269;&#x4EF6;&#x6216;&#x9663;&#x5217;&#x9032;&#x884C;<code>frag</code>&#x7684;&#x52A0;&#x5165;&#xFF0C;&#x5354;&#x52A9;&#x512A;&#x5316;&#x7A0B;&#x5F0F;&#x78BC;&#x3002;</p>
-<blockquote>
-<p>add, setError, eachAdd&#x6703;&#x56DE;&#x50B3;frag&#x672C;&#x8EAB;&#x3002;</p>
-</blockquote>
 <pre><code class="lang-js">frag.eachAdd(target, name, action)
 </code></pre>
-<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;demo frag&apos;</span>, (base, skill, next, exit, fail) =&gt; {
+<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;demo frag&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
     base.count = <span class="hljs-number">0</span>
-    <span class="hljs-keyword">let</span> target = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
-    skill.frag(<span class="hljs-string">&apos;each add demo&apos;</span>).eachAdd(target, <span class="hljs-string">&apos;name&apos;</span>, (data, index, err, onload) =&gt; {
-        base.count += data
-        onload()
-    }).activate((err) =&gt; {
-        <span class="hljs-built_in">console</span>.log(base.count) <span class="hljs-comment">// 10</span>
-        next()
-    })
+    enzy.frag(<span class="hljs-string">&apos;each add demo&apos;</span>)
+        .setError(<span class="hljs-built_in">console</span>.error)
+        .eachAdd([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-string">&apos;name&apos;</span>, (data, index, err, onload) =&gt; {
+            base.count += data
+            onload()
+        }).activate(() =&gt; {
+            <span class="hljs-built_in">console</span>.log(base.count) <span class="hljs-comment">// 10</span>
+            next()
+        })
 })
 </code></pre>
 <hr>
@@ -371,8 +372,8 @@ skill.createFragment(fragName)
 <blockquote>
 <p>&#x5BA3;&#x544A;error&#x7684;auto&#x6703;&#x88AB;&#x5BA3;&#x544A;&#x70BA;&#x932F;&#x8AA4;status</p>
 </blockquote>
-<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;demo auto&apos;</span>, (base, skill, next, exit, fail) =&gt; {
-    skill.auto({
+<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;demo auto&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
+    enzy.auto({
         name: <span class="hljs-string">&apos;auto&apos;</span>,
         action(error, onload) {
             setTimeout(() =&gt; {
@@ -392,8 +393,8 @@ gene.transcription().then((messenger) =&gt; {
 <hr>
 <h2 id="addbase">AddBase</h2>
 <p>&#x52A0;&#x5165;&#x4E00;&#x500B;&#x9E7C;&#x57FA;&#xFF0C;&#x9019;&#x500B;&#x63A5;&#x53E3;&#x63D0;&#x4F9B;&#x4E86;&#x8CE6;&#x4E88;<code>$</code>&#x5B57;&#x865F;&#x7684;&#x4FDD;&#x8B77;&#x6A5F;&#x5236;&#x3002;</p>
-<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;use add base&apos;</span>, (base, skill, next, exit, fail) =&gt; {
-    skill.addBase(<span class="hljs-string">&apos;$foo&apos;</span>, <span class="hljs-string">&apos;foo&apos;</span>)
+<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;use add base&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
+    enzy.addBase(<span class="hljs-string">&apos;$foo&apos;</span>, <span class="hljs-string">&apos;foo&apos;</span>)
     base.$foo = <span class="hljs-string">&apos;bar&apos;</span> <span class="hljs-comment">// throw error</span>
     next()
 })
@@ -403,7 +404,7 @@ gene.transcription().then((messenger) =&gt; {
 <p>&#x904B;&#x884C;&#x53E6;&#x4E00;&#x96BB;&#x57FA;&#x56E0;&#x4E26;&#x4E14;&#x6574;&#x5408;&#x8A72;&#x57FA;&#x56E0;&#x7684;<code>status</code>&#x3002;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">let</span> gene1 = Nucleoid.createGene({
     templates: {
-        <span class="hljs-string">&apos;get_number&apos;</span>: (base, skill, next, exit, fail) =&gt; {
+        <span class="hljs-string">&apos;get_number&apos;</span>: (base, enzy, next, exit, fail) =&gt; {
             base.number = <span class="hljs-number">1</span>
             next()
         }
@@ -412,8 +413,8 @@ gene.transcription().then((messenger) =&gt; {
 
 <span class="hljs-keyword">let</span> gene2 = Nucleoid.createGene({
     templates: {
-        <span class="hljs-string">&apos;use cross&apos;</span>: (base, skill, next, exit, fail) =&gt; {
-            skill.cross(gene1, (err, messenger) =&gt; {
+        <span class="hljs-string">&apos;use cross&apos;</span>: (base, enzy, next, exit, fail) =&gt; {
+            enzy.cross(gene1, (err, messenger) =&gt; {
                 <span class="hljs-keyword">if</span> (err) {
                     <span class="hljs-built_in">console</span>.error(err)
                 } <span class="hljs-keyword">else</span> {
@@ -429,11 +430,11 @@ gene.transcription().then((messenger) =&gt; {
 <h2 id="polling">Polling</h2>
 <p>&#x8A2D;&#x7F6E;&#x4E00;&#x500B;&#x80CC;&#x666F;&#x53CD;&#x8986;&#x57F7;&#x884C;&#x7684;function&#x3002;</p>
 <blockquote>
-<p>transcription&#x4E0D;&#x6703;&#x7B49;&#x5F85;polling&#x5BA3;&#x544A;stop&#x624D;&#x7D50;&#x675F;&#xFF0C;&#x800C;&#x6C92;&#x6709;&#x5BA3;&#x544A;stop&#x7684;status&#x6703;&#x5BA3;&#x544A;&#x70BA;&#x932F;&#x8AA4;&#x3002;</p>
+<p><code>transcription</code>&#x4E0D;&#x6703;&#x7B49;&#x5F85;<code>polling</code>&#x5BA3;&#x544A;<code>stop</code>&#x624D;&#x7D50;&#x675F;&#xFF0C;&#x800C;&#x6C92;&#x6709;&#x5BA3;&#x544A;<code>stop</code>&#x7684;<code>status</code>&#x6703;&#x5BA3;&#x544A;&#x70BA;&#x932F;&#x8AA4;&#x3002;</p>
 </blockquote>
-<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;use polling&apos;</span>, (base, skill, next, exit, fail) =&gt; {
+<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;use polling&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
     base.count = <span class="hljs-number">0</span>
-    skill.polling({
+    enzy.polling({
         name: <span class="hljs-string">&apos;polling&apos;</span>,
         action(stop) {
             base.count += <span class="hljs-number">1</span>
@@ -448,8 +449,8 @@ gene.transcription().then((messenger) =&gt; {
 <hr>
 <h2 id="each">Each</h2>
 <p>&#x4E00;&#x500B;&#x666E;&#x901A;&#x7684;&#x540C;&#x6B65;&#x8FED;&#x4EE3;&#x5668;&#x3002;</p>
-<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;use each&apos;</span>, (base, skill, next, exit, fail) =&gt; {
-    skill.each([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], (item, index) =&gt; {
+<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;use each&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
+    enzy.each([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], (item, index) =&gt; {
         <span class="hljs-built_in">console</span>.log(item) <span class="hljs-comment">// 1,2,3,4</span>
     })
     next()
@@ -457,13 +458,13 @@ gene.transcription().then((messenger) =&gt; {
 </code></pre>
 <h2 id="deepclone">DeepClone</h2>
 <p>&#x6DF1;&#x62F7;&#x8C9D;&#x4E00;&#x500B;&#x7269;&#x4EF6;&#x3002;</p>
-<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;use deep clone&apos;</span>, (base, skill, next, exit, fail) =&gt; {
+<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;use deep clone&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
     <span class="hljs-keyword">let</span> obj = {
         a: {
             b: <span class="hljs-number">5</span>
         }
     }
-    base.clone = skill.deepClone(obj)
+    base.clone = enzy.deepClone(obj)
     base.clone.a.b = <span class="hljs-number">10</span> <span class="hljs-comment">// 10</span>
     <span class="hljs-built_in">console</span>.log(obj.a.b) <span class="hljs-comment">// 5</span>
     next()
@@ -471,12 +472,12 @@ gene.transcription().then((messenger) =&gt; {
 </code></pre>
 <hr>
 <h2 id="scan">Scan</h2>
-<p><code>scan</code>&#x6703;&#x63A5;&#x6536;&#x4E00;&#x4E32;&#x7684;function&#xFF0C;&#x7576;&#x5BA3;&#x544A;<code>scan()</code>&#x5F8C;&#x6703;&#x628A;&#x6240;&#x6709;&#x8A3B;&#x518A;&#x7684;function&#x57F7;&#x884C;&#x4E00;&#x6B21;&#x4E26;&#x8CE6;&#x4E88;&#x5BA3;&#x544A;&#x7684;&#x53C3;&#x6578;&#x3002;</p>
-<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;use deep clone&apos;</span>, (base, skill, next, exit, fail) =&gt; {
+<p><code>scan</code>&#x6703;&#x63A5;&#x6536;&#x4E00;&#x4E32;function&#xFF0C;&#x7576;&#x5BA3;&#x544A;<code>scan()</code>&#x5F8C;&#x6703;&#x628A;&#x6240;&#x6709;&#x8A3B;&#x518A;&#x7684;function&#x57F7;&#x884C;&#x4E00;&#x6B21;&#x4E26;&#x8CE6;&#x4E88;&#x5BA3;&#x544A;&#x7684;&#x53C3;&#x6578;&#x3002;</p>
+<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;use deep clone&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
     <span class="hljs-keyword">let</span> flow1 = (n) =&gt; { <span class="hljs-built_in">console</span>.log(n) }
-    <span class="hljs-keyword">let</span> flow2 = (n) =&gt; { <span class="hljs-built_in">console</span>.log(n * <span class="hljs-number">2</span>) }
-    <span class="hljs-keyword">let</span> scan = skill.scan(flow1, flow2, next)
-    scan(<span class="hljs-number">10</span>) <span class="hljs-comment">// log =&gt; 10, log =&gt; 20</span>
+    <span class="hljs-keyword">let</span> flow2 = (n, d) =&gt; { <span class="hljs-built_in">console</span>.log(n * d) }
+    <span class="hljs-keyword">let</span> scan = enzy.scan(flow1, flow2, next)
+    scan(<span class="hljs-number">10</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// log =&gt; 10, log =&gt; 20</span>
 })
 </code></pre>
 <hr>
@@ -508,7 +509,7 @@ gene.transcription().then((messenger) =&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"使用技能","level":"2.5","depth":1,"next":{"title":"監聽模式","level":"2.6","depth":1,"path":"pages/mode/main.md","ref":"./pages/mode/main.md","articles":[]},"previous":{"title":"基因模板","level":"2.4.2","depth":2,"path":"pages/flow/template.md","ref":"./pages/flow/template.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nucleoid","links":{"sidebar":false},"gitbook":"*","extension":null},"file":{"path":"pages/skill/main.md","mtime":"2019-03-14T11:41:13.784Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-14T11:41:32.237Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Enzyme","level":"2.5","depth":1,"next":{"title":"監聽模式","level":"2.6","depth":1,"path":"pages/mode/main.md","ref":"./pages/mode/main.md","articles":[]},"previous":{"title":"基因模板","level":"2.4.2","depth":2,"path":"pages/flow/template.md","ref":"./pages/flow/template.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nucleoid","links":{"sidebar":false},"gitbook":"*","extension":null},"file":{"path":"pages/enzyme/main.md","mtime":"2019-03-15T05:49:10.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-15T06:00:13.726Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

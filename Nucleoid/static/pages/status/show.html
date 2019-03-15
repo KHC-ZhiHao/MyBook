@@ -215,12 +215,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="../skill/main.html">
+        <li class="chapter " data-level="2.5" data-path="../enzyme/main.html">
             
-                <a href="../skill/main.html">
+                <a href="../enzyme/main.html">
             
                     
-                    使用技能
+                    Enzyme
             
                 </a>
             
@@ -304,8 +304,8 @@
 <p><code>get</code>&#x6703;&#x6B77;&#x904D;&#x7576;&#x4E0B;<code>status</code>&#x5C0D;&#x8C61;&#x4EE5;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x5B50;&#x7BC0;&#x9EDE;&#xFF0C;&#x56DE;&#x50B3;&#x4E00;&#x500B;&#x7D50;&#x679C;&#x7269;&#x4EF6;&#x3002;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> gene = Nucleoid.createGene(<span class="hljs-string">&apos;look status&apos;</span>)
 
-gene.template(<span class="hljs-string">&apos;add status&apos;</span>, (base, skill, next) =&gt; {
-    skill.setStatusAttr(<span class="hljs-string">&apos;show&apos;</span>, <span class="hljs-string">&apos;hello.&apos;</span>)
+gene.template(<span class="hljs-string">&apos;add status&apos;</span>, (base, enzy, next) =&gt; {
+    enzy.setStatusAttr(<span class="hljs-string">&apos;show&apos;</span>, <span class="hljs-string">&apos;hello.&apos;</span>)
     next()
 })
 
@@ -345,10 +345,10 @@ gene.transcription().then((messenger) =&gt; {
 <p><code>json()</code>&#x662F;&#x53D6;&#x5F97;<code>get</code>&#x4E4B;&#x5F8C;&#x8F49;&#x63DB;&#x6210;<code>json</code>&#x5B57;&#x4E32;&#xFF0C;&#x4F46;&#x8207;&#x76F4;&#x63A5;<code>stringify</code>&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x8A72;function&#x6703;&#x6AA2;&#x67E5;&#x662F;&#x5426;&#x6709;&#x8FF4;&#x5708;&#x7D50;&#x69CB;&#x3002;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> gene = Nucleoid.createGene(<span class="hljs-string">&apos;look json&apos;</span>)
 
-gene.template(<span class="hljs-string">&apos;add status&apos;</span>, (base, skill, next) =&gt; {
+gene.template(<span class="hljs-string">&apos;add status&apos;</span>, (base, enzy, next) =&gt; {
     <span class="hljs-keyword">let</span> loop = {}
     loop.target = loop
-    skill.setStatusAttr(<span class="hljs-string">&apos;show&apos;</span>, loop)
+    enzy.setStatusAttr(<span class="hljs-string">&apos;show&apos;</span>, loop)
     next()
 })
 
@@ -390,10 +390,10 @@ gene.transcription().then((messenger) =&gt; {
 <p>&#x770B;&#x9019;&#x51FD;&#x6578;&#x540D;&#x5C31;&#x77E5;&#x9053;&#x5C0A;&#x7235;&#x4E0D;&#x51E1;&#xFF0C;&#x5B83;&#x80FD;&#x7522;&#x751F;&#x4E00;&#x7D44;&#x7C21;&#x55AE;&#x7684;HTML&#xFF0C;&#x63D0;&#x5347;&#x6700;&#x7D42;&#x72C0;&#x614B;&#x7684;&#x53EF;&#x8996;&#x5EA6;&#x3002;</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> gene = Nucleoid.createGene(<span class="hljs-string">&apos;look html&apos;</span>)
 
-gene.template(<span class="hljs-string">&apos;add status&apos;</span>, (base, skill, next) =&gt; {
+gene.template(<span class="hljs-string">&apos;add status&apos;</span>, (base, enzy, next) =&gt; {
     <span class="hljs-keyword">let</span> loop = {}
     loop.target = loop
-    skill.setStatusAttr(<span class="hljs-string">&apos;show&apos;</span>, loop)
+    enzy.setStatusAttr(<span class="hljs-string">&apos;show&apos;</span>, loop)
     next()
 })
 
@@ -432,11 +432,11 @@ gene.transcription().then((messenger) =&gt; {
 <h3 id="&#x7576;&#x7BC0;&#x9EDE;&#x6709;&#x932F;&#x8AA4;">&#x7576;&#x7BC0;&#x9EDE;&#x6709;&#x932F;&#x8AA4;</h3>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> gene = Nucleoid.createGene(<span class="hljs-string">&apos;look error&apos;</span>)
 
-gene.template(<span class="hljs-string">&apos;success&apos;</span>, (base, skill, next, exit, fail) =&gt; {
+gene.template(<span class="hljs-string">&apos;success&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
     next()
 })
 
-gene.template(<span class="hljs-string">&apos;fail&apos;</span>, (base, skill, next, exit, fail) =&gt; {
+gene.template(<span class="hljs-string">&apos;fail&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
     <span class="hljs-comment">// &#x5BA3;&#x544A;fail&#x6703;&#x64F2;&#x51FA;&#x932F;&#x8AA4;&#x72C0;&#x614B;</span>
     fail(<span class="hljs-string">&apos;fail test&apos;</span>)
     <span class="hljs-comment">// &#x5728;try-catch-mode&#x5E95;&#x4E0B;&#x9019;&#x6A23;&#x4E5F;&#x6703;&#x64F2;&#x51FA;&#x932F;&#x8AA4;&#x72C0;&#x614B;</span>
@@ -480,11 +480,11 @@ gene.transcription().catch((messenger) =&gt; {
 <pre><code class="lang-js"><span class="hljs-comment">// &#x8A72;&#x51FD;&#x6578;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5E73;&#x9762;&#x5316;&#x7684;&#x932F;&#x8AA4;&#x8CC7;&#x6599;</span>
 <span class="hljs-keyword">var</span> gene = Nucleoid.createGene(<span class="hljs-string">&apos;look error&apos;</span>)
 
-gene.template(<span class="hljs-string">&apos;success&apos;</span>, (base, skill, next, exit, fail) =&gt; {
+gene.template(<span class="hljs-string">&apos;success&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
     next()
 })
 
-gene.template(<span class="hljs-string">&apos;fail&apos;</span>, (base, skill, next, exit, fail) =&gt; {
+gene.template(<span class="hljs-string">&apos;fail&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
     fail(<span class="hljs-string">&apos;fail test&apos;</span>)
 })
 
@@ -534,7 +534,7 @@ gene.transcription().catch((messenger) =&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"輸出模型","level":"2.3.1","depth":2,"next":{"title":"流程控制","level":"2.4","depth":1,"path":"pages/flow/main.md","ref":"./pages/flow/main.md","articles":[{"title":"base","level":"2.4.1","depth":2,"path":"pages/flow/base.md","ref":"./pages/flow/base.md","articles":[]},{"title":"基因模板","level":"2.4.2","depth":2,"path":"pages/flow/template.md","ref":"./pages/flow/template.md","articles":[]}]},"previous":{"title":"狀態","level":"2.3","depth":1,"path":"pages/status/main.md","ref":"./pages/status/main.md","articles":[{"title":"輸出模型","level":"2.3.1","depth":2,"path":"pages/status/show.md","ref":"./pages/status/show.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","-search"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nucleoid","links":{"sidebar":false},"gitbook":"*","extension":null},"file":{"path":"pages/status/show.md","mtime":"2019-03-14T11:41:13.784Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-14T11:41:32.237Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"輸出模型","level":"2.3.1","depth":2,"next":{"title":"流程控制","level":"2.4","depth":1,"path":"pages/flow/main.md","ref":"./pages/flow/main.md","articles":[{"title":"base","level":"2.4.1","depth":2,"path":"pages/flow/base.md","ref":"./pages/flow/base.md","articles":[]},{"title":"基因模板","level":"2.4.2","depth":2,"path":"pages/flow/template.md","ref":"./pages/flow/template.md","articles":[]}]},"previous":{"title":"狀態","level":"2.3","depth":1,"path":"pages/status/main.md","ref":"./pages/status/main.md","articles":[{"title":"輸出模型","level":"2.3.1","depth":2,"path":"pages/status/show.md","ref":"./pages/status/show.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","-search"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nucleoid","links":{"sidebar":false},"gitbook":"*","extension":null},"file":{"path":"pages/status/show.md","mtime":"2019-03-15T05:49:10.892Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-15T06:00:13.726Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

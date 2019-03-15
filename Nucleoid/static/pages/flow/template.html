@@ -45,7 +45,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../skill/main.html" />
+    <link rel="next" href="../enzyme/main.html" />
     
     
     <link rel="prev" href="base.html" />
@@ -215,12 +215,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="../skill/main.html">
+        <li class="chapter " data-level="2.5" data-path="../enzyme/main.html">
             
-                <a href="../skill/main.html">
+                <a href="../enzyme/main.html">
             
                     
-                    使用技能
+                    Enzyme
             
                 </a>
             
@@ -303,18 +303,18 @@
 <h2 id="api">API</h2>
 <p>&#x5EFA;&#x7ACB;&#x6A21;&#x677F;&#x6709;&#x4E09;&#x7A2E;&#x65B9;&#x6CD5;&#xFF1A;</p>
 <h3 id="&#x7368;&#x7ACB;&#x5EFA;&#x7ACB;&#x4E00;&#x500B;&#x6A21;&#x677F;">&#x7368;&#x7ACB;&#x5EFA;&#x7ACB;&#x4E00;&#x500B;&#x6A21;&#x677F;</h3>
-<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;templateName&apos;</span>, (base, skill, next, exit, fail) =&gt; {
+<pre><code class="lang-js">gene.template(<span class="hljs-string">&apos;templateName&apos;</span>, (base, enzy, next, exit, fail) =&gt; {
     <span class="hljs-comment">// do something...</span>
     next()
 })
 </code></pre>
 <h3 id="clone&#x6A21;&#x677F;"><code>Clone</code>&#x6A21;&#x677F;</h3>
 <pre><code class="lang-js"><span class="hljs-keyword">let</span> templates = {
-    <span class="hljs-string">&apos;templateName1&apos;</span>: (base, skill, next, exit, fail) =&gt; {
+    <span class="hljs-string">&apos;templateName1&apos;</span>: (base, enzy, next, exit, fail) =&gt; {
         <span class="hljs-comment">// do something...</span>
         next()
     },
-    <span class="hljs-string">&apos;templateName2&apos;</span>: (base, skill, next, exit, fail) =&gt; {
+    <span class="hljs-string">&apos;templateName2&apos;</span>: (base, enzy, next, exit, fail) =&gt; {
         <span class="hljs-comment">// do something...</span>
         next()
     }
@@ -328,7 +328,7 @@ gene.cloning(templates)
 </blockquote>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> gene = Nucleoid.createGene(<span class="hljs-string">&apos;template&apos;</span>, {
     templates: {
-        <span class="hljs-string">&apos;templateName&apos;</span>: (base, skill, next, exit, fail) =&gt; {
+        <span class="hljs-string">&apos;templateName&apos;</span>: (base, enzy, next, exit, fail) =&gt; {
             <span class="hljs-comment">// do something...</span>
             next()
         }
@@ -358,7 +358,7 @@ gene.cloning(templates)
                 </a>
                 
                 
-                <a href="../skill/main.html" class="navigation navigation-next " aria-label="Next page: 使用技能">
+                <a href="../enzyme/main.html" class="navigation navigation-next " aria-label="Next page: Enzyme">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -369,7 +369,7 @@ gene.cloning(templates)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基因模板","level":"2.4.2","depth":2,"next":{"title":"使用技能","level":"2.5","depth":1,"path":"pages/skill/main.md","ref":"./pages/skill/main.md","articles":[]},"previous":{"title":"base","level":"2.4.1","depth":2,"path":"pages/flow/base.md","ref":"./pages/flow/base.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nucleoid","links":{"sidebar":false},"gitbook":"*","extension":null},"file":{"path":"pages/flow/template.md","mtime":"2019-03-14T10:11:53.751Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-14T11:41:32.237Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基因模板","level":"2.4.2","depth":2,"next":{"title":"Enzyme","level":"2.5","depth":1,"path":"pages/enzyme/main.md","ref":"./pages/enzyme/main.md","articles":[]},"previous":{"title":"base","level":"2.4.1","depth":2,"path":"pages/flow/base.md","ref":"./pages/flow/base.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nucleoid","links":{"sidebar":false},"gitbook":"*","extension":null},"file":{"path":"pages/flow/template.md","mtime":"2019-03-15T05:49:10.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-15T06:00:13.726Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

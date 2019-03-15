@@ -13,7 +13,7 @@
 ### 獨立建立一個模板
 
 ```js
-gene.template('templateName', (base, skill, next, exit, fail) => {
+gene.template('templateName', (base, enzy, next, exit, fail) => {
     // do something...
     next()
 })
@@ -23,11 +23,11 @@ gene.template('templateName', (base, skill, next, exit, fail) => {
 
 ```js
 let templates = {
-    'templateName1': (base, skill, next, exit, fail) => {
+    'templateName1': (base, enzy, next, exit, fail) => {
         // do something...
         next()
     },
-    'templateName2': (base, skill, next, exit, fail) => {
+    'templateName2': (base, enzy, next, exit, fail) => {
         // do something...
         next()
     }
@@ -43,7 +43,7 @@ gene.cloning(templates)
 ```js
 var gene = Nucleoid.createGene('template', {
     templates: {
-        'templateName': (base, skill, next, exit, fail) => {
+        'templateName': (base, enzy, next, exit, fail) => {
             // do something...
             next()
         }

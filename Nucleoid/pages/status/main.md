@@ -39,12 +39,12 @@
 ```js
 var gene = Nucleoid.createGene()
 
-gene.template('template1', (base, skill, next) => {
+gene.template('template1', (base, enzy, next) => {
     // 這兩塊都有各自的status物件，但無法在這觀測它
     next()
 })
 
-gene.template('template2', (base, skill, next) => {
+gene.template('template2', (base, enzy, next) => {
     // 這兩塊都有各自的status物件，但無法在這觀測它
     next()
 })
@@ -56,19 +56,19 @@ gene.template('template2', (base, skill, next) => {
 
 `template`中只能藉由下列兩支API添加參考給`status`。
 
-> skill是一個小型函式庫，後面的章節會介紹。
+> enzy是一個小型函式庫，後面的章節會介紹。
 
 ```js
-skill.setStatusAttr(key, value)
-skill.setRootStatusAttr(key, value)
+enzy.setStatusAttr(key, value)
+enzy.setRootStatusAttr(key, value)
 ```
 
 ```js
-gene.template('template1', (base, skill, next) => {
+gene.template('template1', (base, enzy, next) => {
     // 註記當下的Status
-    skill.setStatusAttr('now', 'now status.')
+    enzy.setStatusAttr('now', 'now status.')
     // 註記源頭Status
-    skill.setRootStatusAttr('root', 'hello root.')
+    enzy.setRootStatusAttr('root', 'hello root.')
     next()
 })
 ```

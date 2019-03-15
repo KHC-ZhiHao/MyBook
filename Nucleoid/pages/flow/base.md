@@ -25,12 +25,12 @@ gene.setGenetic(() => {
 ### Template表現
 
 ```js
-gene.template('conut plus1', (base, skill, next, exit, fail) => {
+gene.template('conut plus1', (base, enzy, next, exit, fail) => {
     base.count += 1
     next()
 })
 
-gene.template('conut plus2', (base, skill, next, exit, fail) => {
+gene.template('conut plus2', (base, enzy, next, exit, fail) => {
     base.count += 1
     console.log(base.count) // 2
     next()
@@ -50,7 +50,7 @@ gene.setGenetic(() => {
     }
 })
 
-gene.template('impossible', (base, skill, next, exit, fail) => {
+gene.template('impossible', (base, enzy, next, exit, fail) => {
     base.$onlyFalse = true // throw error
     next()
 })
