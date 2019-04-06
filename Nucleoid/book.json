@@ -1,7 +1,7 @@
 {
     "title": "Nucleoid",
     "extension": null,
-    "plugins": ["-sharing", "-search"],
+    "plugins": ["-sharing", "-search", "fontsettings"],
     "links": {
         "sidebar": false
     },

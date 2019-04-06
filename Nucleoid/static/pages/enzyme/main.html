@@ -17,11 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
                 
             
         
@@ -342,10 +342,17 @@ enzy.createFragment(fragName)
         })
 })
 </code></pre>
-<h3 id="seterror">SetError</h3>
+<h3 id="seterror--setsuccess">SetError &amp; SetSuccess</h3>
+<h4 id="seterror">SetError</h4>
 <p>&#x8A3B;&#x518A;&#x4E00;&#x500B;&#x932F;&#x8AA4;&#x4E8B;&#x4EF6;&#xFF0C;&#x7576;&#x5BA3;&#x544A;<code>error</code>&#x5F8C;&#x6703;&#x547C;&#x53EB;&#x4E00;&#x6B21;&#x8A72;function&#x3002;</p>
 <pre><code class="lang-js">frag.setError((err) =&gt; {
     <span class="hljs-built_in">console</span>.error(err)
+})
+</code></pre>
+<h4 id="setsuccess">SetSuccess</h4>
+<p>&#x8A3B;&#x518A;&#x4E00;&#x500B;&#x6210;&#x529F;&#x4E8B;&#x4EF6;&#xFF0C;&#x7576;&#x6240;&#x6709;&#x7A0B;&#x5E8F;&#x90FD;&#x5BA3;&#x544A;<code>onload</code>&#x6642;&#x547C;&#x53EB;&#x8A72;function&#x3002;</p>
+<pre><code class="lang-js">frag.setSuccess(() =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;success&apos;</span>)
 })
 </code></pre>
 <h3 id="eachadd">EachAdd</h3>
@@ -509,7 +516,7 @@ gene.transcription().then((messenger) =&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Enzyme","level":"2.5","depth":1,"next":{"title":"監聽模式","level":"2.6","depth":1,"path":"pages/mode/main.md","ref":"./pages/mode/main.md","articles":[]},"previous":{"title":"基因模板","level":"2.4.2","depth":2,"path":"pages/flow/template.md","ref":"./pages/flow/template.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nucleoid","links":{"sidebar":false},"gitbook":"*","extension":null},"file":{"path":"pages/enzyme/main.md","mtime":"2019-03-15T05:49:10.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-15T06:00:13.726Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Enzyme","level":"2.5","depth":1,"next":{"title":"監聽模式","level":"2.6","depth":1,"path":"pages/mode/main.md","ref":"./pages/mode/main.md","articles":[]},"previous":{"title":"基因模板","level":"2.4.2","depth":2,"path":"pages/flow/template.md","ref":"./pages/flow/template.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search","fontsettings"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nucleoid","links":{"sidebar":false},"gitbook":"*","extension":null},"file":{"path":"pages/enzyme/main.md","mtime":"2019-04-06T09:28:00.728Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-06T09:31:00.223Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -519,15 +526,15 @@ gene.transcription().then((messenger) =&gt; {
     <script src="../../gitbook/theme.js"></script>
     
         
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
         <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
         
     
         
         <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 

@@ -1,7 +1,6 @@
 {
-    "title": "Nucleoid",
-    "extension": null,
-    "plugins": ["-sharing", "-search"],
+    "title": "PackHouse",
+    "plugins": ["-sharing", "-search", "fontsettings"],
     "links": {
         "sidebar": false
     },
