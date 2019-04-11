@@ -8,7 +8,10 @@ let math = Packhouse.createGroup({
     alias: 'math',
     module: false,
     secure: true,
-    merger: { coop },
+    merger: {
+        coop: coop,
+        coop2: () => coop // 實現懶加載
+    },
     create: function(options) {
         this.foo = 'bar'
     }
@@ -89,6 +92,8 @@ math.addTool({
 * optional
 
 `Merger`是一個引用另一個`Group`的接口。
+
+> 你可以直接傳入Group或是藉由一個function回傳Group，後者可以避免一些沒有使用到卻加載的情形。
 
 ```js
 coop.addTool({

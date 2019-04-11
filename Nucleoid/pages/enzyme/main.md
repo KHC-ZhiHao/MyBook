@@ -240,11 +240,26 @@ gene.template('use deep clone', (base, enzy, next, exit, fail) => {
 `scan`會接收一串function，當宣告`scan()`後會把所有註冊的function執行一次並賦予宣告的參數。
 
 ```js
-gene.template('use deep clone', (base, enzy, next, exit, fail) => {
+gene.template('use scan', (base, enzy, next, exit, fail) => {
     let flow1 = (n) => { console.log(n) }
     let flow2 = (n, d) => { console.log(n * d) }
     let scan = enzy.scan(flow1, flow2, next)
     scan(10, 2) // log => 10, log => 20
+})
+```
+
+---
+
+## Pump
+
+賦予一個數字，並每次呼叫時增加一點，直到宣告至該總數為止。
+
+```js
+gene.template('use pump', (base, enzy, next, exit, fail) => {
+    let pump = enzy.pump(10, next)
+    for (let i = 0; i < 10; i++) {
+        pump()
+    }
 })
 ```
 

@@ -184,6 +184,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.8" data-path="pump.html">
+            
+                <a href="pump.html">
+            
+                    
+                    流程:Pump
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -253,6 +266,7 @@
     molds: [<span class="hljs-string">&apos;string&apos;</span>, <span class="hljs-string">&apos;string&apos;</span>, ...],
     updateTime: <span class="hljs-number">64000</span>,
     paramLength: <span class="hljs-number">0</span>,
+    description: <span class="hljs-string">&apos;&apos;</span>,
     allowDirect: <span class="hljs-literal">false</span>,
     create(store, system) {},
     update(store, system) {}
@@ -290,6 +304,7 @@
 <p>&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6642;&#x9593;&#x6216;&#x88AB;&#x52D5;&#x7684;&#x5BA3;&#x544A;<code>update</code>&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x88AB;&#x5176;&#x4ED6;<code>tool</code>&#x547C;&#x53EB;&#x3002;</p>
 <blockquote>
 <p>store&#x8207;system.store&#x6709;&#x672C;&#x8CEA;&#x4E0A;&#x7684;&#x5DEE;&#x7570;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;system.store&#x88AB;proxy&#x4FDD;&#x8B77;&#x8457;&#xFF0C;&#x5728;group&#x5BA3;&#x544A;secure&#x7684;&#x60C5;&#x6CC1;&#x4E0B;&#x7121;&#x6CD5;&#x6539;&#x8B8A;&#x6578;&#x503C;&#x3002;</p>
+<p>update&#x4E26;&#x4E0D;&#x662F;&#x70BA;<code>serverless</code>&#x8A2D;&#x7ACB;&#x7684;&#xFF0C;&#x96D6;&#x8AAA;&#x5B83;&#x7684;&#x5B58;&#x5728;&#x6709;&#x5176;&#x7528;&#x9014;&#xFF0C;&#x4F46;&#x76E1;&#x53EF;&#x80FD;&#x4F7F;&#x7528;&#x907F;&#x514D;&#x72C0;&#x614B;&#x88AB;&#x6539;&#x8B8A;&#x3002;</p>
 </blockquote>
 <h3 id="molds">Molds</h3>
 <ul>
@@ -297,6 +312,12 @@
 <li>optional</li>
 </ul>
 <p>&#x6307;&#x5B9A;&#x53C3;&#x6578;&#x9700;&#x8981;&#x88AB;&#x54EA;&#x500B;mold&#x7D66;&#x89E3;&#x6790;&#x3002;</p>
+<h3 id="description">Description</h3>
+<ul>
+<li>string</li>
+<li>optional</li>
+</ul>
+<p>&#x5C0D;&#x65BC;Tool&#x7684;&#x6558;&#x8FF0;&#xFF0C;&#x4E0D;&#x6703;&#x6709;&#x4EFB;&#x4F55;&#x5F71;&#x97FF;&#xFF0C;&#x4F46;&#x6703;&#x88AB;<code>getProfile</code>&#x8B80;&#x53D6;&#x5230;&#xFF0C;&#x53EF;&#x61C9;&#x7528;&#x65BC;&#x6E2C;&#x8A66;&#x6216;&#x6587;&#x4EF6;&#x3002;</p>
 <h3 id="allowdirect">AllowDirect</h3>
 <ul>
 <li>boolean</li>
@@ -309,7 +330,7 @@
 <li>optional</li>
 </ul>
 <p>&#x5BA3;&#x544A;&#x53C3;&#x6578;&#x6578;&#x91CF;&#xFF0C;<code>PackHouse</code>&#x6709;&#x81EA;&#x52D5;&#x89E3;&#x6790;&#x53C3;&#x6578;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x6307;&#x5B9A;&#x53C3;&#x6578;&#x9577;&#x5EA6;&#x53EF;&#x4EE5;&#x8DF3;&#x904E;&#x9019;&#x500B;&#x904E;&#x7A0B;&#xFF0C;&#x52A0;&#x5FEB;&#x7A0B;&#x5E8F;&#x9032;&#x884C;&#x3002;</p>
-<h3 id="updatetime">updateTime</h3>
+<h3 id="updatetime">UpdateTime</h3>
 <ul>
 <li>number(ms)</li>
 <li>optional</li>
@@ -347,7 +368,7 @@
 system.updateCall(<span class="hljs-string">&apos;toolName&apos;</span>) <span class="hljs-comment">// &#x57F7;&#x884C;&#x6307;&#x5B9A;tool&#x7684;update</span>
 </code></pre>
 <h3 id="casting">Casting</h3>
-<p>&#x624B;&#x52D5;&#x4F7F;&#x7528;Mold&#x3002;</p>
+<p>&#x624B;&#x52D5;&#x4F7F;&#x7528;<code>Mold</code>&#x3002;</p>
 <blockquote>
 <p>&#x7B2C;&#x4E09;&#x500B;&#x53C3;&#x6578;&#x53EA;&#x6709;&#x5728;check&#x932F;&#x8AA4;&#x6642;&#x624D;&#x6703;&#x88AB;&#x547C;&#x53EB;&#x3002;</p>
 </blockquote>
@@ -432,7 +453,7 @@ system.updateCall(<span class="hljs-string">&apos;toolName&apos;</span>) <span c
 }).direct(<span class="hljs-number">20</span>)
 </code></pre>
 <h3 id="rule">Rule</h3>
-<p>NoGood&#x548C;S.O.P&#x7684;&#x7D71;&#x4E00;&#x8655;&#x7406;&#xFF0C;&#x6709;&#x6642;&#x5019;&#x53EF;&#x4EE5;&#x8B93;&#x7A0B;&#x5F0F;&#x78BC;&#x7F8E;&#x89C0;&#x4E00;&#x9EDE;&#x3002;</p>
+<p>NoGood&#x548C;S.O.P&#x7684;&#x7D71;&#x4E00;&#x8655;&#x7406;&#x4ECB;&#x9762;&#xFF0C;&#x6709;&#x6642;&#x5019;&#x53EF;&#x4EE5;&#x8B93;&#x7A0B;&#x5F0F;&#x78BC;&#x7F8E;&#x89C0;&#x4E00;&#x9EDE;&#x3002;</p>
 <pre><code class="lang-js">group.alone().tool(<span class="hljs-string">&apos;double&apos;</span>).rule(ngCallback, sopCallbakc, ngOptions).direct(<span class="hljs-number">20</span>)
 </code></pre>
 <h3 id="clear">Clear</h3>
@@ -441,6 +462,37 @@ system.updateCall(<span class="hljs-string">&apos;toolName&apos;</span>) <span c
 <p>&#x6BCF;&#x500B;&#x55AE;&#x5143;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x79FB;&#x9664;&#x65B9;&#x6CD5;&#xFF0C;&#x8A73;&#x60C5;&#x8ACB;&#x53C3;&#x95B1;&#x6587;&#x4EF6;&#x3002;</p>
 </blockquote>
 <pre><code class="lang-js">group.alone().tool(<span class="hljs-string">&apos;double&apos;</span>).clear()
+</code></pre>
+<hr>
+<h2 id="replace">Replace</h2>
+<p>&#x66FF;&#x63DB;&#x4EFB;&#x4F55;&#x6307;&#x5B9A;&#x7684;&#x884C;&#x70BA;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF01;&#x9019;&#x72C0;&#x614B;&#x7528;&#x65BC;&#x8ABF;&#x9069;&#x6216;&#x6E2C;&#x8A66;&#x4F7F;&#x7528;&#xFF0C;&#x4ED6;&#x6703;&#x76F4;&#x63A5;&#x66F4;&#x52D5;Tool&#x7684;&#x884C;&#x70BA;&#x3002;</p>
+</blockquote>
+<h3 id="&#x66FF;&#x63DB;&#x6389;&#x52D5;&#x4F5C;">&#x66FF;&#x63DB;&#x6389;&#x52D5;&#x4F5C;</h3>
+<pre><code class="lang-js">group.alone().tool(<span class="hljs-string">&apos;double&apos;</span>).replace({
+    action(number, system, error, success) {
+        <span class="hljs-comment">// &#x9019;&#x500B;double&#x4E0D;&#x8AD6;&#x5728;&#x54EA;&#x547C;&#x53EB;&#x90FD;&#x6703; * 3&#xFF0C;&#x5373;&#x8A72;&#x7CFB;&#x7D71;&#x7522;&#x751F;&#x932F;&#x8AA4;</span>
+        success(number * <span class="hljs-number">3</span>)
+    }
+})
+</code></pre>
+<h3 id="&#x7528;&#x5728;&#x8ABF;&#x9069;&#x72C0;&#x614B;">&#x7528;&#x5728;&#x8ABF;&#x9069;&#x72C0;&#x614B;</h3>
+<p>&#x5047;&#x5982;&#x6211;&#x5011;&#x8981;&#x6E2C;&#x8A66;&#x4E00;&#x500B;&#x529F;&#x80FD;&#x89F8;&#x53CA;&#x5230;&#x5916;&#x90E8;&#x72C0;&#x614B;&#xFF0C;&#x4F46;&#x6211;&#x5011;&#x4E26;&#x6C92;&#x6709;&#x5BE6;&#x969B;&#x7684;&#x74B0;&#x5883;&#x6642;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x6539;&#x5B83;&#x7684;&#x884C;&#x70BA;&#x4F86;&#x9054;&#x5230;&#x55AE;&#x5143;&#x6E2C;&#x8A66;&#x7684;&#x76EE;&#x6A19;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>)
+
+group.addTool({
+    name: <span class="hljs-string">&apos;getFile&apos;</span>,
+    action(system, error, success) {
+        success(fs.readFileSync(<span class="hljs-string">&apos;./index.html&apos;</span>))
+    }
+})
+
+group.alone().tool(<span class="hljs-string">&apos;getFile&apos;</span>).replace({
+    action(number, system, error, success) {
+        success(<span class="hljs-string">&apos;&lt;div&gt;777777&lt;/div&gt;&apos;</span>)
+    }
+})
 </code></pre>
 
                                 
@@ -469,7 +521,7 @@ system.updateCall(<span class="hljs-string">&apos;toolName&apos;</span>) <span c
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"呼叫:Tool","level":"2.5","depth":1,"next":{"title":"柯里化:Line","level":"2.6","depth":1,"path":"pages/line.md","ref":"./pages/line.md","articles":[]},"previous":{"title":"模組:Mold","level":"2.4","depth":1,"path":"pages/mold.md","ref":"./pages/mold.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search","fontsettings"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PackHouse","links":{"sidebar":false},"gitbook":"*"},"file":{"path":"pages/tool.md","mtime":"2019-04-05T08:09:15.098Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-06T09:31:09.163Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"呼叫:Tool","level":"2.5","depth":1,"next":{"title":"柯里化:Line","level":"2.6","depth":1,"path":"pages/line.md","ref":"./pages/line.md","articles":[]},"previous":{"title":"模組:Mold","level":"2.4","depth":1,"path":"pages/mold.md","ref":"./pages/mold.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search","fontsettings"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PackHouse","links":{"sidebar":false},"gitbook":"*"},"file":{"path":"pages/tool.md","mtime":"2019-04-11T17:10:19.220Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-11T17:10:45.275Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

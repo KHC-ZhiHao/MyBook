@@ -169,6 +169,7 @@ anyGroup.addTool({
 * array: 驗證是否為陣列
 * object: 驗證是否為物件
 * function: 驗證是否為函數
+* required: 驗證參數不能為空
 
 > 以上的Public Mold都能接收一項abe(Allowed be empty)的參數，允許參數為空。
 

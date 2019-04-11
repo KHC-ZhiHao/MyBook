@@ -8,6 +8,7 @@ group.addTool({
     molds: ['string', 'string', ...],
     updateTime: 64000,
     paramLength: 0,
+    description: '',
     allowDirect: false,
     create(store, system) {},
     update(store, system) {}
@@ -51,12 +52,21 @@ group.addTool({
 
 > store與system.store有本質上的差異，基本上system.store被proxy保護著，在group宣告secure的情況下無法改變數值。
 
+> update並不是為`serverless`設立的，雖說它的存在有其用途，但盡可能使用避免狀態被改變。
+
 ### Molds
 
 * array
 * optional
 
 指定參數需要被哪個mold給解析。
+
+### Description
+
+* string
+* optional
+
+對於Tool的敘述，不會有任何影響，但會被`getProfile`讀取到，可應用於測試或文件。
 
 ### AllowDirect
 
@@ -72,7 +82,7 @@ group.addTool({
 
 宣告參數數量，`PackHouse`有自動解析參數的方法，但指定參數長度可以跳過這個過程，加快程序進行。
 
-### updateTime
+### UpdateTime
 
 * number(ms)
 * optional
@@ -138,7 +148,7 @@ system.updateCall('toolName') // 執行指定tool的update
 
 ### Casting
 
-手動使用Mold。
+手動使用`Mold`。
 
 > 第三個參數只有在check錯誤時才會被呼叫。
 
@@ -280,7 +290,7 @@ group.alone().tool('double').sop((context) => {
 
 ### Rule
 
-NoGood和S.O.P的統一處理，有時候可以讓程式碼美觀一點。
+NoGood和S.O.P的統一處理介面，有時候可以讓程式碼美觀一點。
 
 ```js
 group.alone().tool('double').rule(ngCallback, sopCallbakc, ngOptions).direct(20)
@@ -294,4 +304,44 @@ group.alone().tool('double').rule(ngCallback, sopCallbakc, ngOptions).direct(20)
 
 ```js
 group.alone().tool('double').clear()
+```
+
+---
+
+## Replace
+
+替換任何指定的行為。
+
+> 注意！這狀態用於調適或測試使用，他會直接更動Tool的行為。
+
+### 替換掉動作
+
+```js
+group.alone().tool('double').replace({
+    action(number, system, error, success) {
+        // 這個double不論在哪呼叫都會 * 3，即該系統產生錯誤
+        success(number * 3)
+    }
+})
+```
+
+### 用在調適狀態
+
+假如我們要測試一個功能觸及到外部狀態，但我們並沒有實際的環境時，可以更改它的行為來達到單元測試的目標。
+
+```js
+let fs = require('fs')
+
+group.addTool({
+    name: 'getFile',
+    action(system, error, success) {
+        success(fs.readFileSync('./index.html'))
+    }
+})
+
+group.alone().tool('getFile').replace({
+    action(number, system, error, success) {
+        success('<div>777777</div>')
+    }
+})
 ```
