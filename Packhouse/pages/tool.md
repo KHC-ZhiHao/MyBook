@@ -200,6 +200,23 @@ group.alone().tool('double').promise(20).then((result) => {
 })
 ```
 
+### Recursive 🔬
+
+基於`action`的遞迴行為。
+
+> 這是一個實驗功能。
+
+> Recursive的最後一個參數必為callback。
+
+```js
+group.alone().tool('double').recursive(20, (err, result, context) => {
+    // 宣告stack反覆執行action行為直到結果 > 80
+    if (result < 80) {
+        context.stack(result)
+    }
+})
+```
+
 ---
 
 ## 預處理
@@ -226,6 +243,12 @@ console.log(group.alone().tool('sum').packing(20, 10).direct()) // 30
 console.log(group.alone().tool('sum').packing(20).packing(10).direct()) // 30
 ```
 
+當然，也可以無視前面所有的設定直接取代。
+
+```js
+console.log(group.alone().tool('sum').acking(20).packing(10).rePacking(20, 20).direct()) // 40
+```
+
 ### NoGood
 
 錯誤預乘載，這個方法會導致錯誤處理的狀態變動。
@@ -244,9 +267,9 @@ group.alone().tool('sum').ng((error) => {
 console.log(group.alone().tool('double').ng(errorCallback).direct('10')) // param 0 not a number.
 ```
 
-#### Action
+#### Action & Recursive
 
-在Action的呼叫方法下，callback第一個error參數會被移除。
+在Action與Recursive的呼叫方法下，callback第一個error參數會被移除。
 
 ```js
 group.alone().tool('double').ng(errorCallback).action(10, (result) => {
@@ -280,6 +303,8 @@ console.log(result) // 50
 ### S.O.P
 
 不論錯誤或成功都會執行`sop`，可以處理一些共通邏輯。
+
+> Recursive只要執行一次就會宣告一次SOP。
 
 ```js
 group.alone().tool('double').sop((context) => {

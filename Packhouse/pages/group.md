@@ -130,6 +130,7 @@ console.log(alone.tool('double').direct(10)) // 20
 
 ```js
 group.addTool(options)
+group.addTool(name, () => { return options }) //lazy
 group.addTools([options, options, ...])
 group.addTools({name: optnios, name2: options, ...})
 ```
@@ -140,14 +141,17 @@ group.addTools({name: optnios, name2: options, ...})
 group.addMold(options)
 group.addMolds([options, options, ...])
 group.addMolds({name: optnios, name2: options, ...})
+group.addMolds({name: () => { return optnios }, name2: () => { return optnios }, ...}) // lazy
 ```
 
 ### Line
 
 ```js
 group.addLine(options)
+group.addLine(name, () => { return options }) //lazy
 group.addLines([options, options, ...])
 group.addLines({name: optnios, name2: options, ...})
+group.addLines({name: () => { return optnios }, name2: () => { return optnios }, ...}) // lazy
 ```
 
 ---

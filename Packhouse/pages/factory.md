@@ -38,6 +38,12 @@ let factory = Packhouse.createFactory({
 factory.addGroup('groupName', group)
 ```
 
+### 移除Group
+
+```js
+factory.removeGroup('groupName')
+```
+
 ### 呼叫Tool
 
 ```js

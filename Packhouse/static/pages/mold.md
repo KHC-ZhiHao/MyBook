@@ -7,7 +7,8 @@
 ```js
 group.addMold({ 
     name: 'myFirstMold',
-    check(parma, system) { return true }, 
+    description: 'Mold Description',
+    check(parma, system) { return true },
     casting(parma) { return 'hello world.' }
 })
 ```
@@ -22,6 +23,13 @@ group.addMold({
 * require
 
 Mold的名稱，不允許重複。
+
+### Description
+
+* string
+* optional
+
+對於Mold的敘述，不會有任何影響，但會被`getProfile`讀取到，可應用於測試或文件。
 
 ### Check
 

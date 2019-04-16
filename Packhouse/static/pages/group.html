@@ -358,6 +358,7 @@ math.addTool({
 <p>&#x5927;&#x591A;&#x6578;&#x7684;&#x529F;&#x80FD;&#x90FD;&#x662F;&#x7531;<code>group</code>&#x6240;&#x5275;&#x5EFA;&#x7684;&#xFF0C;&#x5275;&#x5EFA;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
 <h3 id="tool">Tool</h3>
 <pre><code class="lang-js">group.addTool(options)
+group.addTool(name, () =&gt; { <span class="hljs-keyword">return</span> options }) <span class="hljs-comment">//lazy</span>
 group.addTools([options, options, ...])
 group.addTools({name: optnios, name2: options, ...})
 </code></pre>
@@ -365,11 +366,14 @@ group.addTools({name: optnios, name2: options, ...})
 <pre><code class="lang-js">group.addMold(options)
 group.addMolds([options, options, ...])
 group.addMolds({name: optnios, name2: options, ...})
+group.addMolds({name: () =&gt; { <span class="hljs-keyword">return</span> optnios }, name2: () =&gt; { <span class="hljs-keyword">return</span> optnios }, ...}) <span class="hljs-comment">// lazy</span>
 </code></pre>
 <h3 id="line">Line</h3>
 <pre><code class="lang-js">group.addLine(options)
+group.addLine(name, () =&gt; { <span class="hljs-keyword">return</span> options }) <span class="hljs-comment">//lazy</span>
 group.addLines([options, options, ...])
 group.addLines({name: optnios, name2: options, ...})
+group.addLines({name: () =&gt; { <span class="hljs-keyword">return</span> optnios }, name2: () =&gt; { <span class="hljs-keyword">return</span> optnios }, ...}) <span class="hljs-comment">// lazy</span>
 </code></pre>
 <hr>
 <h2 id="profile-&#x1F52C;">Profile &#x1F52C;</h2>
@@ -406,7 +410,7 @@ group.addLines({name: optnios, name2: options, ...})
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"集合:Group","level":"2.3","depth":1,"next":{"title":"模組:Mold","level":"2.4","depth":1,"path":"pages/mold.md","ref":"./pages/mold.md","articles":[]},"previous":{"title":"工廠:Factory","level":"2.2","depth":1,"path":"pages/factory.md","ref":"./pages/factory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search","fontsettings"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PackHouse","links":{"sidebar":false},"gitbook":"*"},"file":{"path":"pages/group.md","mtime":"2019-04-11T16:45:34.046Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-11T17:10:45.275Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"集合:Group","level":"2.3","depth":1,"next":{"title":"模組:Mold","level":"2.4","depth":1,"path":"pages/mold.md","ref":"./pages/mold.md","articles":[]},"previous":{"title":"工廠:Factory","level":"2.2","depth":1,"path":"pages/factory.md","ref":"./pages/factory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search","fontsettings"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PackHouse","links":{"sidebar":false},"gitbook":"*"},"file":{"path":"pages/group.md","mtime":"2019-04-16T06:23:46.566Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-16T06:24:17.521Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

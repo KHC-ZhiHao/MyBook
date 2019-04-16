@@ -266,7 +266,8 @@
 </blockquote>
 <pre><code class="lang-js">group.addMold({ 
     name: <span class="hljs-string">&apos;myFirstMold&apos;</span>,
-    check(parma, system) { <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span> }, 
+    description: <span class="hljs-string">&apos;Mold Description&apos;</span>,
+    check(parma, system) { <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span> },
     casting(parma) { <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;hello world.&apos;</span> }
 })
 </code></pre>
@@ -278,6 +279,12 @@
 <li>require</li>
 </ul>
 <p>Mold&#x7684;&#x540D;&#x7A31;&#xFF0C;&#x4E0D;&#x5141;&#x8A31;&#x91CD;&#x8907;&#x3002;</p>
+<h3 id="description">Description</h3>
+<ul>
+<li>string</li>
+<li>optional</li>
+</ul>
+<p>&#x5C0D;&#x65BC;Mold&#x7684;&#x6558;&#x8FF0;&#xFF0C;&#x4E0D;&#x6703;&#x6709;&#x4EFB;&#x4F55;&#x5F71;&#x97FF;&#xFF0C;&#x4F46;&#x6703;&#x88AB;<code>getProfile</code>&#x8B80;&#x53D6;&#x5230;&#xFF0C;&#x53EF;&#x61C9;&#x7528;&#x65BC;&#x6E2C;&#x8A66;&#x6216;&#x6587;&#x4EF6;&#x3002;</p>
 <h3 id="check">Check</h3>
 <ul>
 <li>function</li>
@@ -439,7 +446,7 @@ anyGroup.addTool({
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"模組:Mold","level":"2.4","depth":1,"next":{"title":"呼叫:Tool","level":"2.5","depth":1,"path":"pages/tool.md","ref":"./pages/tool.md","articles":[]},"previous":{"title":"集合:Group","level":"2.3","depth":1,"path":"pages/group.md","ref":"./pages/group.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search","fontsettings"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PackHouse","links":{"sidebar":false},"gitbook":"*"},"file":{"path":"pages/mold.md","mtime":"2019-04-11T16:45:34.046Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-11T17:10:45.275Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"模組:Mold","level":"2.4","depth":1,"next":{"title":"呼叫:Tool","level":"2.5","depth":1,"path":"pages/tool.md","ref":"./pages/tool.md","articles":[]},"previous":{"title":"集合:Group","level":"2.3","depth":1,"path":"pages/group.md","ref":"./pages/group.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","-search","fontsettings"],"styles":{"website":"./style/main.css"},"pluginsConfig":{"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"PackHouse","links":{"sidebar":false},"gitbook":"*"},"file":{"path":"pages/mold.md","mtime":"2019-04-16T06:19:45.426Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-16T06:24:17.521Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

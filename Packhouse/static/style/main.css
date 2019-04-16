@@ -12,9 +12,10 @@
     transition: 0.2s;
     color: #000 !important;
     text-decoration: none !important;
+    background-color: #FFF !important;
 }
 
 .pk-btn:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(220, 220, 220, 1) !important;
     text-decoration: none !important;
 }
